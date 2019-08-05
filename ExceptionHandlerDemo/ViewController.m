@@ -29,8 +29,8 @@
     NSString *str;
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:0];
     
-    [dic setObject:str forKey:@"ddd"];
-    NSLog(@"%@---%@",dic[@"ddd"],dic[@"dddddd"]);
+    [dic setObject:str forKey:@"test"];
+    NSLog(@"%@---%@",dic[@"test"],dic[@"test12"]);
 }
 
 

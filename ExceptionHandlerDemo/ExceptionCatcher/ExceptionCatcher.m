@@ -169,14 +169,9 @@ void venderSignalHandler(int signal);
     }
     else {
         UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-        
-        // 触发时间
         localNotification.timeZone = [NSTimeZone defaultTimeZone];
         localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:timeInteval];
-        
-        // 标题
         localNotification.alertBody = title;
-        // userinfo
         localNotification.userInfo = userInfo;
         
         [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
@@ -193,8 +188,10 @@ void venderSignalHandler(int signal);
         bExceptionHandler();
     }
     
+    // show alert
     [ExceptionCatcher alertExit];
     
+    // register notification
     [ExceptionCatcher sendLocalNotification:@"Tap Here!" body:@"Please tap here to recover last view page!"];
     
     // fake LiveRunloop
@@ -203,7 +200,7 @@ void venderSignalHandler(int signal);
     
     while (fabs(endtime - AlertStartTime) < 2.0) {
         for (NSString *mode in allModes) {
-            // 快速的切换Mode就能处理滚动、点击等事件
+            // fast run Mode for handling touch/scroll events
             CFRunLoopRunInMode((CFStringRef)mode, 0.001, false);
         }
         endtime = CFAbsoluteTimeGetCurrent();

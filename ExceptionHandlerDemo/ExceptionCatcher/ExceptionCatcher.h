@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
  - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 
  or may not work as expected way!
+ 
  @param handler exception handler for user doing something
  */
 + (void)setupUncaughtSignalExceptionOn:(void(^)(void))handler;

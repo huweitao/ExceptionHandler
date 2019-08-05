@@ -144,8 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				0931C59322F8277C005A3131 /* recovery.png */,
-				0931C59422F8277C005A3131 /* ExceptionCatcher.m */,
 				0931C59522F8277C005A3131 /* ExceptionCatcher.h */,
+				0931C59422F8277C005A3131 /* ExceptionCatcher.m */,
 			);
 			path = ExceptionCatcher;
 			sourceTree = "<group>";
