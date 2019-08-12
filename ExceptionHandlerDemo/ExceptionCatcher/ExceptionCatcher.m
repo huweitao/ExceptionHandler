@@ -55,6 +55,9 @@ void venderSignalHandler(int signal);
 {
     bExceptionHandler = handler;
     NSSetUncaughtExceptionHandler(venderHandleException);
+    signal(SIGHUP, venderSignalHandler);
+    signal(SIGINT, venderSignalHandler);
+    signal(SIGQUIT, venderSignalHandler);
     signal(SIGABRT, venderSignalHandler);
     signal(SIGILL, venderSignalHandler);
     signal(SIGSEGV, venderSignalHandler);
